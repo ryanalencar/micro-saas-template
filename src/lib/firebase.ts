@@ -3,11 +3,6 @@ import "server-only";
 import { cert, getApps, initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 
-const decodedKey = Buffer.from(
-  process.env.FIREBASE_PRIVATE_KEY_BASE_64!,
-  "base64"
-).toString("utf-8");
-
 if (!process.env.FIREBASE_PRIVATE_KEY) {
   throw new Error('Environment variable FIREBASE_PRIVATE_KEY is required');
 }
